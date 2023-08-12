@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
     private Animator anim;
     private SpriteRenderer sprite;
     
+    [SerializeField] private AudioSource jumpSound;
+    
     [SerializeField] private LayerMask jumpableGround;
 
     private float dirX;
@@ -40,6 +42,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
+            jumpSound.Play();
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
 
