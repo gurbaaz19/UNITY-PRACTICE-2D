@@ -2,13 +2,15 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
+using DefaultNamespace;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class ItemCollector : MonoBehaviour
 {
-    private int isBoxCollectedTime= 0;
-    private int cherriesCollected;
+    private int isBoxCollectedTime;
+    private static int cherriesCollected=CherryScore.cherriesCollected;
     [SerializeField] private AudioSource collectSound;
 
     [SerializeField] private TextMeshProUGUI cherriesCollectedText;
@@ -45,5 +47,15 @@ public class ItemCollector : MonoBehaviour
                 cherriesCollectedText.text = $"Cherries Collected: {cherriesCollected.ToString()}";
             }
         }
+    }
+    
+    public static int GetCherriesCollected()
+    {
+        return cherriesCollected;
+    }
+    
+    public static void SetCherriesCollected(int cherriesCollected)
+    {
+        ItemCollector.cherriesCollected = cherriesCollected;
     }
 }
