@@ -81256,7 +81256,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collectSound: {fileID: 2128822196}
-  cherriesCollectedText: {fileID: 0}
+  cherriesCollectedText: {fileID: 1329435127}
 --- !u!114 &2128822193
 MonoBehaviour:
   m_ObjectHideFlags: 0
