@@ -1,7 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DefaultNamespace;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 using UnityEngine.SceneManagement;
 
 public class Finish : MonoBehaviour
@@ -24,7 +27,8 @@ public class Finish : MonoBehaviour
     
     private void FinishLevel()
     {
-        Debug.Log("Level Finished");
+        CherryScore.cherriesCollected = ItemCollector.GetCherriesCollected();
+        Debug.Log("Level Finished with " + CherryScore.cherriesCollected + " cherries collected.");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
