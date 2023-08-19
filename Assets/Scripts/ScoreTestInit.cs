@@ -11,6 +11,7 @@ public class ScoreTestInit : MonoBehaviour
     void Start()
     {
         cherriesCollectedText.text = $"Cherries Collected: {CherryScore.cherriesCollected.ToString()}";
+        ItemCollector.SetCherriesCollected(CherryScore.cherriesCollected);
     }
 
     // Update is called once per frame
